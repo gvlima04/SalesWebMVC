@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace SalesWebMVC.Controllers
 {
@@ -25,6 +26,15 @@ namespace SalesWebMVC.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        public IActionResult Hello()
+        {
+            DateTime now = DateTime.Now;
+
+            ViewData["Msg"] = "Hello World!!";
+            ViewData["Data"] = now.ToString("dd/MM/yyyy - HH:mm",CultureInfo.InvariantCulture);
             return View();
         }
 
