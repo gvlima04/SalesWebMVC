@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Globalization;
+using SalesWebMVC.Models.ViewModel;
 
 namespace SalesWebMVC.Controllers
 {
