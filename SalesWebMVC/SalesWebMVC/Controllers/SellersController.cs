@@ -28,6 +28,17 @@ namespace SalesWebMvc.Controllers
             return View(viewModel);
         }
 
+        public IActionResult Delete(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var obj = _sellerService.FindById(id.Value);
+            
+            if (obj is null) return NotFound();
+
+            return View(obj);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Seller seller)
